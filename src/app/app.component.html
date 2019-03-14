@@ -1,9 +1,13 @@
-<div class="sticky-top">
+
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <div class="sticky-top">
     <app-nav-bar></app-nav-bar>
+  </div>
+    <section>
+        <router-outlet></router-outlet>
+    </section>
+    
 </div>
 
-<section>
-  <router-outlet></router-outlet>
-</section>
 
 

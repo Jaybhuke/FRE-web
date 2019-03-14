@@ -1,0 +1,8 @@
+bg-dark{
+    background-color: transparent;
+}
+
+.nav a{
+    color: darkgray !important;
+    font-size: 1.2em !important;
+}
