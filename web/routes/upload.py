@@ -1,18 +1,13 @@
 # Packages
 import os
-from flask import request
-from flask_restful import Resource 
-from werkzeug.utils import secure_filename
+import sys
 
 # Modules
-from . import app
-
-
-app.config['UPLOAD_FOLDER'] = 'files'
+sys.path.append('./')
+from app import app, api, Resource, request, secure_filename
 
 
 class Upload(Resource):
-    """ Upload File """
 
     @staticmethod
     def post():
@@ -33,3 +28,4 @@ class Upload(Resource):
         })
 
 
+api.add_resource(Upload, '/upload')
