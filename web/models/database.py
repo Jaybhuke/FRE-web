@@ -1,7 +1,7 @@
 # Run this file directly to create the database tables.
 # Packages
 import sys
-sys.path.append('./')
+sys.path.append('../')
 
 # Modules
 from app import db
