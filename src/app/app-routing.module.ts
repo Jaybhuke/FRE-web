@@ -15,6 +15,7 @@ const routes: Routes = [
   { path:'register', component: RegisterComponent },
   { path:'about', component: AboutComponent },
   { path:'uploader', component: UploaderComponent }
+  // Auth Gaurds If your are login tar path access asto
 ];
 
 @NgModule({

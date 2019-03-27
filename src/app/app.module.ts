@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { AboutComponent } from './about/about.component';
 import { MustMatchDirective } from './_helpers/must-match.directive';
 import { UploaderComponent } from './uploader/uploader.component';
+import { UserService } from './user.service';
+import { InterceptorModule } from './interceptor.module';
 
 
 @NgModule({
@@ -22,14 +25,16 @@ import { UploaderComponent } from './uploader/uploader.component';
     RegisterComponent,
     AboutComponent,
     MustMatchDirective,
-    UploaderComponent
+    UploaderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    InterceptorModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

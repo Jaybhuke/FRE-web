@@ -6,47 +6,54 @@
                             
                                 
                                     <h3>Register</h3>
-                                    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" [mustMatch]="['password', 'confirmPassword']" novalidate>
+                                    <form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
                                         <div class="form-group">
                                             
-                                            <input type="text" placeholder="First Name" class="form-control" name="firstName" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
+                                            <input type="text" placeholder="First Name" class="form-control" name="firstName" [(ngModel)]="registerUserData.firstName" #firstName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && firstName.invalid }" required />
                                             <div *ngIf="f.submitted && firstName.invalid" class="invalid-feedback">
                                                 <div *ngIf="firstName.errors.required">First Name is required</div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             
-                                            <input type="text" placeholder="Last Name" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
+                                            <input type="text" placeholder="Last Name" class="form-control" name="lastName" [(ngModel)]="registerUserData.lastName" #lastName="ngModel" [ngClass]="{ 'is-invalid': f.submitted && lastName.invalid }" required />
                                             <div *ngIf="f.submitted && lastName.invalid" class="invalid-feedback">
                                                 <div *ngIf="lastName.errors.required">Last Name is required</div>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             
-                                            <input type="text" class="form-control" placeholder="Email" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
+                                                <input type="text" placeholder="UserName" class="form-control" name="username" [(ngModel)]="registerUserData.username" #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.invalid }" required />
+                                                <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
+                                                    <div *ngIf="username.errors.required">UserName is required</div>
+                                                </div>
+                                            </div>
+                                        <!-- <div class="form-group">
+                                            
+                                            <input type="text" class="form-control" placeholder="Email" name="username" [(ngModel)]="registerUserData.username" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email />
                                             <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
                                                 <div *ngIf="email.errors.required">Email is required</div>
                                                 <div *ngIf="email.errors.email">Email must be a valid email address</div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             
-                                            <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
+                                            <input  type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="registerUserData.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6" />
                                             <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
                                                 <div *ngIf="password.errors.required">Password is required</div>
                                                 <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             
                                             <input type="password" class="form-control" placeholder="Confirm Password" name="confirmPassword" [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.invalid }" required />
                                             <div *ngIf="f.submitted && confirmPassword.invalid" class="invalid-feedback">
                                                 <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
                                                 <div *ngIf="confirmPassword.errors.mustMatch">Passwords must match</div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
-                                            <button class="btn btn-primary">Register</button>
+                                            <button (click)="registerUser(f.value)" class="btn btn-primary">Register</button>
                                         </div>
                                     </form>
                                 
@@ -81,3 +88,10 @@
 });
 //# sourceURL=pen.js
 </script>
+
+<!-- <h2>user lisr</h2>
+<ul>
+    <li>
+        {{user.id}}. {{user.name}} - {{user.age}}
+    </li>
+</ul> -->
