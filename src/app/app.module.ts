@@ -14,6 +14,8 @@ import { MustMatchDirective } from './_helpers/must-match.directive';
 import { UploaderComponent } from './uploader/uploader.component';
 import { UserService } from './user.service';
 import { InterceptorModule } from './interceptor.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -26,13 +28,15 @@ import { InterceptorModule } from './interceptor.module';
     AboutComponent,
     MustMatchDirective,
     UploaderComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    InterceptorModule
+    InterceptorModule,
+    ReactiveFormsModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
