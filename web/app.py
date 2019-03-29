@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
@@ -14,7 +14,7 @@ CORS(app, origins="http://localhost:4200", allow_headers=[
 
 
 app.config.from_pyfile('config.py')
- 
+
 db = SQLAlchemy(app)
 
 
@@ -27,6 +27,4 @@ if __name__ == '__main__':
 
     from routes.authentication import *
     from routes.upload import *
-    
-
     app.run()
