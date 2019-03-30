@@ -56,7 +56,7 @@
       </div>
       <form #imageForm = ngForm name="file" (ngSubmit)="onSubmit(Image)">
         <img [src]="imageUrl"  style="width:250px;height:200px">
-        <input type="file" #Image accept="/" (change)="handleFileInput($event.target.files)">
+        <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
         <button type="submit" class="btn btn-info" [disabled]="Image.value==''">Upload</button>
       </form>
     </div>
