@@ -1,6 +1,6 @@
 import { Injectable, NgModule} from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpResponse} from '@angular/common/http';
+import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest} from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 // import { do } 'rxjs/operators';
 
@@ -13,9 +13,10 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
         headers: req.headers
           .set('Access-Control-Allow-Origin','http://127.0.0.1:5000')
           .set('Content-Type','application/json')
+          .set('Content-Type','multipart/form-data')
           // .set('Authorization',`Bearer ${this._authService.getToken()}`) 
         });
-    console.log(dupReq);  
+     console.log(dupReq);
     return next.handle(dupReq);
   }
 };

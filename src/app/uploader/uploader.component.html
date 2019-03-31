@@ -54,11 +54,33 @@
           Image Library
         </h4>
       </div>
-      <form #imageForm = ngForm name="file" (ngSubmit)="onSubmit(Image)">
+      <!-- <form #imageForm = ngForm name="file" (ngSubmit)="onSubmit(Image)" enctype = "multipart/form-data">
         <img [src]="imageUrl"  style="width:250px;height:200px">
-        <input type="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
+        <input type="file" name="file" #Image accept="image/*" (change)="handleFileInput($event.target.files)">
         <button type="submit" class="btn btn-info" [disabled]="Image.value==''">Upload</button>
-      </form>
+      </form> -->
+
+      
+<!-- <form [formGroup]="form" (ngSubmit)="onSubmit()"> -->
+  <!-- <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" placeholder="Bob" formControlName="name">
+  </div> -->
+  <!-- <div class="form-group">
+    <label for="avatar">Avatar</label>
+    <input type="file" id="avatar" (change)="onFileChange($event)" #fileInput>
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
     </div>
   </div>
-</div>
+</div> -->
+
+<h1>Upload</h1>
+
+  <input  name="file" type="file" (change)="onFileSelected($event)">
+  <button type="button" (click)="onUpload()">upload</button>
+  <!-- <form action="http://127.0.0.1:5000/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file">
+    <input type="submit">
+    </form> -->

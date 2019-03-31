@@ -2,6 +2,8 @@
 import os
 import sys
 import Algorithmia
+import base64
+
 
 # Modules
 sys.path.append('./')
@@ -29,13 +31,13 @@ class Upload(Resource):
 
     @staticmethod
     def post():
+        print(request)
         file = request.files['file']
-        
         print(file)
-        if file.filename == '':
+        if file is None:
             return({
                 'statusCode': 1,
-                'message': 'File Not Selected! '
+                'message': 'File Not Selected!'
             })
 
         filename = secure_filename(file.filename)
